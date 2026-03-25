@@ -1,6 +1,6 @@
 {
   "name": "@opkod-france/strapi-provider-email-brevo",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Brevo (Sendinblue) email plugin for Strapi v5 with admin panel configuration",
   "license": "MIT",
   "author": {

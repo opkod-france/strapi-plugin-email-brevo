@@ -1,3 +1,13 @@
+## [5.0.0](https://github.com/opkod-france/strapi-provider-email-brevo/compare/v4.0.0...v5.0.0) (2026-03-25)
+
+### ⚠ BREAKING CHANGES
+
+* requires @getbrevo/brevo ^5.0.3
+
+### Features
+
+* migrate to Brevo SDK v5 ([bd3a269](https://github.com/opkod-france/strapi-provider-email-brevo/commit/bd3a26985013269236aacdc1c663feec038a7f81))
+
 ## [4.0.0](https://github.com/opkod-france/strapi-provider-email-brevo/compare/v3.1.1...v4.0.0) (2026-02-13)
 
 ### ⚠ BREAKING CHANGES
