@@ -2,10 +2,10 @@
   <img src="logo.png" alt="Brevo Email Plugin" width="200" />
 </p>
 
-# @opkod-france/strapi-provider-email-brevo
+# @opkod-france/strapi-plugin-email-brevo
 
-[![npm version](https://img.shields.io/npm/v/@opkod-france/strapi-provider-email-brevo.svg)](https://www.npmjs.com/package/@opkod-france/strapi-provider-email-brevo)
-[![npm downloads](https://img.shields.io/npm/dm/@opkod-france/strapi-provider-email-brevo.svg)](https://www.npmjs.com/package/@opkod-france/strapi-provider-email-brevo)
+[![npm version](https://img.shields.io/npm/v/@opkod-france/strapi-plugin-email-brevo.svg)](https://www.npmjs.com/package/@opkod-france/strapi-plugin-email-brevo)
+[![npm downloads](https://img.shields.io/npm/dm/@opkod-france/strapi-plugin-email-brevo.svg)](https://www.npmjs.com/package/@opkod-france/strapi-plugin-email-brevo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue.svg)](https://strapi.io/)
 
@@ -24,7 +24,7 @@ Brevo (formerly Sendinblue) email plugin for **Strapi v5** with admin panel conf
 ## Installation
 
 ```bash
-npm install @opkod-france/strapi-provider-email-brevo
+npm install @opkod-france/strapi-plugin-email-brevo
 ```
 
 ## Configuration
@@ -124,14 +124,14 @@ The plugin adds a settings page under **Settings > Brevo Email** where you can:
 When the plugin is disabled or no API key is configured, emails are logged to the console:
 
 ```
-[Brevo Email] Plugin disabled - logging email to console
-================================================================================
-From: noreply@example.com (My App)
+[Brevo] Plugin disabled - email logged to console:
+-------------------------------------------
+From: noreply@example.com
 To: recipient@example.com
 Subject: Test Email
---------------------------------------------------------------------------------
-Text: This is the email content...
-================================================================================
+-------------------------------------------
+Text Preview: This is the email content...
+-------------------------------------------
 ```
 
 This is perfect for local development without needing a Brevo account.

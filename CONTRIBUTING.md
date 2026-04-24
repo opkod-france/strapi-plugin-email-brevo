@@ -1,4 +1,4 @@
-# Contributing to strapi-provider-email-brevo
+# Contributing to strapi-plugin-email-brevo
 
 First off, thank you for considering contributing to this project!
 
@@ -82,8 +82,8 @@ perf: optimize email parsing for large recipient lists
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ayhid/strapi-provider-email-brevo.git
-   cd strapi-provider-email-brevo
+   git clone https://github.com/opkod-france/strapi-plugin-email-brevo.git
+   cd strapi-plugin-email-brevo
    ```
 
 2. Install dependencies:
@@ -95,7 +95,7 @@ perf: optimize email parsing for large recipient lists
    ```bash
    npm link
    cd /path/to/your/strapi-project
-   npm link strapi-provider-email-brevo
+   npm link @opkod-france/strapi-plugin-email-brevo
    ```
 
 ## Code Style

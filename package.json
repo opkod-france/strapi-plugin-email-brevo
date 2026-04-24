@@ -1,5 +1,5 @@
 {
-  "name": "@opkod-france/strapi-provider-email-brevo",
+  "name": "@opkod-france/strapi-plugin-email-brevo",
   "version": "5.0.0",
   "description": "Brevo (Sendinblue) email plugin for Strapi v5 with admin panel configuration",
   "license": "MIT",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/opkod-france/strapi-provider-email-brevo.git"
+    "url": "https://github.com/opkod-france/strapi-plugin-email-brevo.git"
   },
   "bugs": {
-    "url": "https://github.com/opkod-france/strapi-provider-email-brevo/issues"
+    "url": "https://github.com/opkod-france/strapi-plugin-email-brevo/issues"
   },
-  "homepage": "https://github.com/opkod-france/strapi-provider-email-brevo#readme",
+  "homepage": "https://github.com/opkod-france/strapi-plugin-email-brevo#readme",
   "keywords": [
     "strapi",
     "strapi-plugin",
