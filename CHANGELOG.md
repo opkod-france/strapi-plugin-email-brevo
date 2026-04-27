@@ -1,3 +1,14 @@
+## [6.0.0](https://github.com/opkod-france/strapi-plugin-email-brevo/compare/v5.0.0...v6.0.0) (2026-04-27)
+
+### ⚠ BREAKING CHANGES
+
+* Package renamed from @opkod-france/strapi-provider-email-brevo
+to @opkod-france/strapi-plugin-email-brevo. Update your package.json dependency.
+
+### Features
+
+* rename package from provider to plugin ([dfb3f67](https://github.com/opkod-france/strapi-plugin-email-brevo/commit/dfb3f678b18562be66037db9fd94535a87ac1c9c))
+
 ## [5.0.0](https://github.com/opkod-france/strapi-provider-email-brevo/compare/v4.0.0...v5.0.0) (2026-03-25)
 
 ### ⚠ BREAKING CHANGES
