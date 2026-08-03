@@ -29,3 +29,8 @@ yarn-error.log*
 # Test coverage
 coverage/
 .nyc_output/
+.bmad-loop/runs/
+.bmad-loop/cache/
+.bmad-loop/policy.toml
+_bmad/render/
+.claude/settings.local.json

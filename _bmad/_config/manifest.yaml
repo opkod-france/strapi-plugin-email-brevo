@@ -1,0 +1,41 @@
+installation:
+  version: 6.10.1-next.47
+  installDate: 2026-08-03T18:42:01.628Z
+  lastUpdated: 2026-08-03T18:42:01.628Z
+modules:
+  - name: core
+    version: 6.10.1-next.47
+    installDate: 2026-08-03T18:42:01.316Z
+    lastUpdated: 2026-08-03T18:42:01.625Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmm
+    version: 6.10.1-next.47
+    installDate: 2026-08-03T18:42:01.283Z
+    lastUpdated: 2026-08-03T18:42:01.625Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmad-loop
+    version: main
+    installDate: 2026-08-03T18:42:01.327Z
+    lastUpdated: 2026-08-03T18:42:01.627Z
+    source: external
+    npmPackage: null
+    repoUrl: https://github.com/bmad-code-org/bmad-loop
+    channel: next
+    sha: f512288f4e7ca4f028da324b280762fd413b9f90
+  - name: tea
+    version: main
+    installDate: 2026-08-03T18:42:01.572Z
+    lastUpdated: 2026-08-03T18:42:01.628Z
+    source: external
+    npmPackage: bmad-method-test-architecture-enterprise
+    repoUrl: https://github.com/bmad-code-org/bmad-method-test-architecture-enterprise
+    channel: next
+    sha: e8ac10ddb6f6a5ccc4ab62142eeba35a22cb9740
+ides:
+  - claude-code
+  - codex
+  - antigravity-cli
