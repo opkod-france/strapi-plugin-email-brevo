@@ -26,13 +26,19 @@ const settingsController = ({ strapi }: { strapi: Core.Strapi }) => {
     async updateSettings(ctx: Context) {
       try {
         const body = ctx.request.body as Partial<Settings>;
+        const service = getService();
 
-        const validation = validateSettings(body);
+        // The body is a patch over the stored record: omitted fields keep their
+        // stored value. Validation must run on the merged result, never the raw
+        // body — otherwise a save that leaves the API key blank is rejected.
+        const merged = await service.resolveUpdate(body);
+
+        const validation = validateSettings(merged);
         if (!validation.valid) {
           ctx.throw(400, JSON.stringify(validation.errors));
         }
 
-        const settings = await getService().updateSettings(body);
+        const settings = await service.updateSettings(merged);
         ctx.body = maskSettings(settings);
       } catch (error) {
         if ((error as { status?: number }).status === 400) {

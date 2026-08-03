@@ -34,3 +34,4 @@ coverage/
 .bmad-loop/policy.toml
 _bmad/render/
 .claude/settings.local.json
+_bmad-output/

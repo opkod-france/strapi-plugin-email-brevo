@@ -33,9 +33,23 @@ const settingsService = ({ strapi }: { strapi: Core.Strapi }) => {
     };
   }
 
+  /**
+   * Write-path read: resolves to `{}` when nothing is stored and **throws** when
+   * the store itself fails. Never conflate the two — treating a failed read as
+   * "nothing stored" would let a partial patch overwrite a healthy record.
+   */
+  async function readStoredConfig(): Promise<Partial<Settings>> {
+    const stored = (await getPluginStore().get({ key: 'config' })) as Partial<Settings> | undefined;
+    return stored ?? {};
+  }
+
+  /**
+   * Read-path read: a store failure degrades to `undefined` so `getSettings()`
+   * can fall through to file config / defaults per docs/settings-precedence.md.
+   */
   async function getConfigFromDb(): Promise<Partial<Settings> | undefined> {
     try {
-      return (await getPluginStore().get({ key: 'config' })) as Partial<Settings>;
+      return await readStoredConfig();
     } catch (error) {
       strapi.log.warn(`[${PLUGIN_ID}] Failed to read settings from database: ${(error as Error).message}`);
       return undefined;
@@ -56,13 +70,34 @@ const settingsService = ({ strapi }: { strapi: Core.Strapi }) => {
     return DEFAULT_SETTINGS;
   }
 
+  /**
+   * Merges an incoming patch over the stored DB record only — file config and
+   * DEFAULT_SETTINGS stay read-fallbacks and must never leak into what is
+   * written. Nothing is persisted here; the caller validates the result first.
+   *
+   * Keys absent from the patch (or explicitly `undefined`) keep their stored
+   * value; an explicit `''` clears the field.
+   */
+  async function resolveUpdate(patch: Partial<Settings>): Promise<Settings> {
+    const stored = await readStoredConfig();
+    const defined = Object.fromEntries(
+      Object.entries(patch ?? {}).filter(([, value]) => value !== undefined)
+    ) as Partial<Settings>;
+
+    return fillWithDefaults({ ...stored, ...defined });
+  }
+
+  /**
+   * Persists a complete, already-merged record. Callers must go through
+   * `resolveUpdate` first — this function never merges.
+   */
   async function updateSettings(settings: Settings): Promise<Settings> {
     const store = getPluginStore();
     await store.set({ key: 'config', value: settings });
     return getSettings();
   }
 
-  return { getSettings, updateSettings };
+  return { getSettings, resolveUpdate, updateSettings };
 };
 
 export default settingsService;
