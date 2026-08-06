@@ -51,6 +51,9 @@
     "clean": "rm -rf dist",
     "develop": "strapi-plugin watch",
     "verify": "strapi-plugin verify",
+    "test": "vitest run",
+    "test:types": "tsc --noEmit -p tsconfig.test.json",
+    "test:watch": "vitest",
     "prepublishOnly": "npm run build"
   },
   "strapi": {
@@ -78,7 +81,8 @@
     "react-dom": "^18.0.0",
     "semantic-release": "^25.0.0",
     "styled-components": "^6.1.19",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.10"
   },
   "peerDependencies": {
     "@strapi/strapi": "^5.0.0",
